@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9888811928CD875100285011 /* maze3dView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9888811828CD875100285011 /* maze3dView.h */; };
-		9888811B28CD875100285011 /* maze3dView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9888811A28CD875100285011 /* maze3dView.m */; };
+		9888812228CD87DB00285011 /* maze3dView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9888812128CD87DB00285011 /* maze3dView.swift */; };
+		9888812428CD8C2600285011 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 9888812328CD8C2600285011 /* html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9888811528CD875100285011 /* maze3d.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = maze3d.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		9888811828CD875100285011 /* maze3dView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maze3dView.h; sourceTree = "<group>"; };
-		9888811A28CD875100285011 /* maze3dView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = maze3dView.m; sourceTree = "<group>"; };
+		9888812128CD87DB00285011 /* maze3dView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maze3dView.swift; sourceTree = "<group>"; };
+		9888812328CD8C2600285011 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,8 +47,8 @@
 		9888811728CD875100285011 /* maze3d */ = {
 			isa = PBXGroup;
 			children = (
-				9888811828CD875100285011 /* maze3dView.h */,
-				9888811A28CD875100285011 /* maze3dView.m */,
+				9888812328CD8C2600285011 /* html */,
+				9888812128CD87DB00285011 /* maze3dView.swift */,
 			);
 			path = maze3d;
 			sourceTree = "<group>";
@@ -60,7 +60,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9888811928CD875100285011 /* maze3dView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +74,7 @@
 				9888811128CD875100285011 /* Sources */,
 				9888811228CD875100285011 /* Frameworks */,
 				9888811328CD875100285011 /* Resources */,
+				9888812528CD902800285011 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					9888811428CD875100285011 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -122,17 +123,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9888812428CD8C2600285011 /* html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9888812528CD902800285011 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "open -W \"${CODESIGNING_FOLDER_PATH}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9888811128CD875100285011 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9888811B28CD875100285011 /* maze3dView.m in Sources */,
+				9888812228CD87DB00285011 /* maze3dView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +274,7 @@
 		9888811F28CD875100285011 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -258,10 +282,17 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = maze3dView;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = aktk1910.maze3d;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -269,6 +300,7 @@
 		9888812028CD875100285011 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -276,10 +308,16 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = maze3dView;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = aktk1910.maze3d;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
