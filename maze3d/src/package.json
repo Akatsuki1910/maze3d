@@ -1,0 +1,16 @@
+{
+  "build": "index.js",
+  "scripts": {
+    "build": "parcel build src/ts/index.ts --dist-dir ../html --no-source-maps --no-content-hash",
+    "dev": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "three": "^0.144.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-glsl": "2.7.0",
+    "@types/three": "^0.144.0",
+    "parcel": "^2.7.0"
+  }
+}
