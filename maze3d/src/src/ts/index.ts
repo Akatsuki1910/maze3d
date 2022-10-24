@@ -117,11 +117,6 @@ mazes.forEach((maze, i) => {
   })
 })
 
-const gg = new BoxGeometry(100, 100, 100)
-const mm = new MeshBasicMaterial({ color: 0x00ff00 })
-const cube = new Mesh(gg, mm)
-scene.add(cube)
-
 const gg2 = new BoxGeometry(100, 100, 100)
 const mm2 = new MeshBasicMaterial({ color: 0xffff00 })
 const cube2 = new Mesh(gg2, mm2)
