@@ -2,10 +2,8 @@ import {
   AxesHelper,
   BoxGeometry,
   DoubleSide,
-  Material,
   Mesh,
   MeshBasicMaterial,
-  MeshStandardMaterial,
   PerspectiveCamera,
   PlaneGeometry,
   Scene,
@@ -13,7 +11,6 @@ import {
   Vector2,
   WebGLRenderer,
 } from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 import fragmentSource from '../shader/shader.frag'
 import vertexSource from '../shader/shader.vert'
