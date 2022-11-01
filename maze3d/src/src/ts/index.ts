@@ -8,12 +8,16 @@ import {
   PlaneGeometry,
   Scene,
   ShaderMaterial,
+  TextureLoader,
   Vector2,
   WebGLRenderer,
 } from 'three'
 
 import fragmentSource from '../shader/shader.frag'
 import vertexSource from '../shader/shader.vert'
+import wall from '../img/wall.png'
+import tenjo from '../img/tenjo.png'
+import yuka from '../img/yuka.png'
 
 const canvas = document.getElementById('canvas') as HTMLCanvasElement
 const renderer = new WebGLRenderer({ canvas })
@@ -40,11 +44,25 @@ const uniforms = {
   resolution: { type: 'v2', value: new Vector2() },
 }
 
-let material = new ShaderMaterial({
-  uniforms: uniforms,
-  // wireframe: true,
-  vertexShader: vertexSource,
-  fragmentShader: fragmentSource,
+// let material = new ShaderMaterial({
+//   uniforms: uniforms,
+//   // wireframe: true,
+//   vertexShader: vertexSource,
+//   fragmentShader: fragmentSource,
+//   side: DoubleSide,
+// })
+
+let material
+const wallM = new MeshBasicMaterial({
+  map: new TextureLoader().load(wall),
+  side: DoubleSide,
+})
+const tenjoM = new MeshBasicMaterial({
+  map: new TextureLoader().load(tenjo),
+  side: DoubleSide,
+})
+const yukaM = new MeshBasicMaterial({
+  map: new TextureLoader().load(yuka),
   side: DoubleSide,
 })
 
@@ -79,10 +97,13 @@ function createMesh(l: number, i: number, ry = 0, rx = 0, y = 0) {
 
 mazes.forEach((maze, i) => {
   maze.forEach((m, l) => {
+    material = tenjoM
     createMesh(l, i, 0, 0.5, 1)
 
+    material = yukaM
     createMesh(l, i, 0, -0.5, -1)
 
+    material = wallM
     switch (m) {
       case 1:
         createMesh(l + 0.5, i, 0.5)
